@@ -15,6 +15,8 @@
     <h1 sytle="">Sistem Informasi Sekolah </h1> 
     <h3>SMK Bina Nusantara Demak</h3> 
     <a class="btn btn-primary" href="login.php" role="button">Login</a> 
+    <a class="btn btn-primary" href="login.php" role="button">registerr</a> 
+
 </div> 
  
 <!-- Konten Utama --> 

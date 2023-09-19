@@ -53,7 +53,6 @@
          <img src="https://binusasmg.sch.id/ppdb/logobinusa.png" class="h-6 mr-3 sm:h-7" alt="Flowbite Logo" />
          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Bina Nusantara</span>
       </a>
-      <ul c
       <ul class="space-y-2 font-medium">
          <li>
             <a href="admin" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -62,9 +61,15 @@
             </a>
          </li>
          <li>
-            <a href="admin/siswa" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <a href="./admin/siswa" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <i class="fa-solid fa-graduation-cap fa-xl"></i>
                <span class="flex-1 ml-3 whitespace-nowrap">Data_Siswa</span>
+            </a>
+         </li>
+         <li>
+            <a href="./admin/guru" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+            <i class="fa-solid fa-graduation-cap fa-xl"></i>
+               <span class="flex-1 ml-3 whitespace-nowrap">Data_Guru</span>
             </a>
          </li>
       </ul>
