@@ -8,6 +8,8 @@
     <style>
     body {
         background-image: url("https://binusasmg.sch.id/ppdb/binus3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>
 </head>
@@ -39,7 +41,9 @@
  <button type="submit" class="btn btn-primary">LOGIN</button> 
  </div> 
  <br>  
-          <p class="text-center"> belum punya akun? <a href="./auth/">register akun</a></p> 
+          <p class="text-center"> belum punya akun? 
+          <a rel="noopener noreferrer" href="<?php echo base_url('auth'); ?>" class="hover:underline dark:text-violet-400">register</a>.
+
         <br>  
         </form> 
         </div> 

@@ -57,7 +57,7 @@
          <li>
             <a href="admin" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
             <i class="fa-solid fa-chart-line fa-xl"></i>
-               <span class="ml-3">Dashboard Akademik</span>
+               <span class="ml-3">Dashboard</span>
             </a>
          </li>
          <li>
@@ -75,7 +75,7 @@
       </ul>
    </div>
 </aside>
-<h1 class="text-5xl font-bold" style="margin-left: 300px;">Dashboard Akademik <?php echo $this->session->userdata(
+<h1 class="text-5xl font-bold" style="margin-left: 300px;">Dashboard<?php echo $this->session->userdata(
     'username'
 ); ?></h1>
     <div class="flex space-x-4 p-2 my-5" style="margin-left: 300px;">

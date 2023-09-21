@@ -23,7 +23,7 @@
     <h1>Sistem Informasi Sekolah </h1> 
     <h3>SMK Bina Nusantara Demak</h3> 
     <a class="btn btn-primary" href="./auth" role="button">Login</a> 
-    <a class="btn btn-primary" href="./auth" role="button">register</a> 
+    <a class="btn btn-primary" href="./auth/Register" role="button">register</a> 
 
  
 <!-- Konten Utama --> 

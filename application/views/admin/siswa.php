@@ -149,6 +149,9 @@
             <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('admin/siswa') ?>">Siswa</a> 
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/guru') ?>">Guru</a> 
+            </li>
            
         </ul>
         <form class="d-flex" role="search">

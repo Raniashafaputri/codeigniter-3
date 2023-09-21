@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <style> 
     .card { 
         background-color: #20B2AA; 
@@ -131,10 +133,10 @@
 </head>
 
 <body >
-    <div class="flex">
+<div class="flex">
     <div class="navbar"> 
         <span class="openbtn" onclick="openNav()">&#9776;</span> 
-        <h3 class="text-center text-white">Tambah GURU</h3> 
+        <h3 class="text-center text-white">TAMBAH DATA GURU</h3> 
         <div class="search-container"> 
             <input type="text" class="search-box" placeholder="Cari..."> 
             <button type="submit">Cari</button> 
@@ -145,18 +147,19 @@
     <div class="sidenav" id="mySidenav"> 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; tutup</a> 
         <a href="<?php echo base_url('admin') ?>">Beranda</a> 
-        <a href="<?php echo base_url('admin/siswa') ?>">guru</a> 
+        <a href="<?php echo base_url('admin/siswa') ?>">siswa</a> 
+        <a href="<?php echo base_url('admin/guru') ?>">guru</a> 
     </div>
 <div class="content">
         <div class="container S">
             <div class="overflow-x-auto">
-                <form action="<?php echo base_url('admin/aksi_tambah_guru') ?>" enctype="multipart/form-data"
-                    method="post">
+            <form action="<?php echo base_url('admin/aksi_tambah_guru') ?>" class="row" method="post">
+
                     <div class="max-full rounded border overflow-hidden shadow-lg">
                         <div class="px-6 py-4">
                             
                             <div class="grid grid-cols-2 gap-4 mt-5">
-                                <div class="mb-4">
+                                <div class="mb-3 col-6">
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
                                         Nama guru
                                     </label>
@@ -164,15 +167,15 @@
                                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                         id="nama" name="nama" type="text" placeholder="Nama">
                                 </div>
-                                <div class="mb-4">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="niK">
-                                        NIK
+                                <div class="mb-3 col-6">
+                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nisn">
+                                        NISN
                                     </label>
                                     <input
                                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                        id="nisn" name="nisn" type="number" placeholder="Nisn">
+                                        id="nisn" name="nisn" type="number" placeholder="nisn">
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-3 col=6">
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
                                         Gender
                                     </label>
@@ -183,19 +186,22 @@
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
                                 </div>
-                                <div class="mb-4">
-                                    <label class="block text-gray-700 text-sm font-bold mb-2" for="mapel">
-                                        mapel
-                                    </label>
-                                    <select name="mapel" id="mapel"
-                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                        <option selected>Pilih mapel</option>
-                                        <?php foreach($kelas as $row): ?>
-                                        <option value="<?php echo $row->id ?>">
-                                        <?php endforeach ?>
-                                    </select>
+                                <div class="mb-3 col-6"> 
+ 
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="mapel"> 
+                                    Mapel 
+                                </label> 
+                                <select name="mapel" id="mapel" 
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                                    <option selected>Pilih Mapel</option> 
+                                    <?php foreach($mapel as $row): ?> 
+                                    <option value="<?php echo $row->id ?>"> 
+                                        <?php echo $row->nama_mapel ?></option> 
+                                    <?php endforeach ?> 
+                                </select> 
                                 </div>
-                                <div class="mb-3 col-12"> 
+
+                                <div class="mb-3 col-6"> 
                     <button type="submit" class="btn btn-primary"><h1 style="background-color:DodgerBlue;">Tambah</h1></button> 
 
                 </div> 

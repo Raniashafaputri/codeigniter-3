@@ -14,8 +14,8 @@
     <img src="https://binusasmg.sch.id/ppdb/logobinusa.png" alt="image" height="200px" width="200px" > 
     <h1 sytle="">Sistem Informasi Sekolah </h1> 
     <h3>SMK Bina Nusantara Demak</h3> 
-    <a class="btn btn-primary" href="login.php" role="button">Login</a> 
-    <a class="btn btn-primary" href="login.php" role="button">registerr</a> 
+    <a class="btn btn-primary" href="auth" role="button">Login</a> 
+    <a class="btn btn-primary" href="auth/Register" role="button">registerr</a> 
 
 </div> 
  

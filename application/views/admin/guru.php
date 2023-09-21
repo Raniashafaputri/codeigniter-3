@@ -50,7 +50,7 @@
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700">
                                 <?php echo $row->nama_guru ?>
                             </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
+                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nisn ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->id_mapel ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-center">

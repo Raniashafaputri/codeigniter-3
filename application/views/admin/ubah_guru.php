@@ -5,82 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <div class="flex">
-        <div>
-            <?php $this->load->view('components/sidebar')?>
-        </div>
 
-        <div class="container mt-12">
-            <?php $this->load->view('components/navbar')?>
-            <div class="overflow-x-auto">
-                <table class="divide-y-2 divide-gray-200 bg-white text-sm w-full px-2">
-                    <thead>
-                        <tr>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                No
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Nama Guru
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                NISN
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Gender
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Kelas
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Aksi
-                            </th>
-                            <th class="px-4 py-2"></th>
-                        </tr>
-                    </thead>
-
-                    <tbody class="divide-y divide-gray-200">
-                        <?php $no=0; foreach($guru as $row): $no++ ?>
-                        <tr>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $no ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                <?php echo $row->nama_guru ?>
-                            </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->id_mapel ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-center">
-                                <a href="<?php echo base_url('admin/ubah_guru/').$row->id?>" class="inline-block rounded bg-sky-600 px-4 py-2 text-xs font-medium text-white hover:bg-sky-700">
-                                    Ubah
-                                </a>
-                                <button onclick="hapus(<?php echo $row->id ?>)"
-                                    class="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">
-                                    Hapus
-                                </button>
-                                <a href="<?php echo base_url('admin/tambah_guru'); ?>" type="submit" 
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
-                                    Tambah
-                                </button>
-                            </td>
-                        </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <script>
-    function hapus(id) {
-        var yes = confirm('Yakin Di Hapus?');
-        if (yes == true) {
-            window.location.href = "<?php echo base_url('admin/hapus_guru/')?>" + id;
-        }
-    }
-    </script>
+<div class="content"> 
+        <div class="d-flex"> 
+ 
+            <div class="container"> 
+ 
+                <div class="min-vh-100"> 
+                    <div class='card w-75 m-auto p-3'> 
+                        <h3 class="text-center ">Ubah Data Guru</h3> 
+                        <?php foreach($guru as $data_guru): ?> 
+                        <form class="row" action="<?php echo base_url('admin/aksi_ubah_guru'); ?>" 
+                            enctype="multipart/form-data" method="post"> 
+                            <input type="hidden" name="id" value="<?php echo $data_guru->id ?>"> 
+                            <div class="mb-3 col-6"> 
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="nama"> 
+                                    Nama Guru
+                                </label> 
+                                <input 
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                    id="nama" name="nama" type="text" placeholder="Nama" 
+                                    value="<?php echo $data_guru->nama_guru ?>"> 
+                            </div> 
+                            <div class="mb-3 col-6"> 
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="nisn"> 
+                                    NISN 
+                                </label> 
+                                <input 
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                                    id="nisn" name="nisn" type="number" placeholder="Nisn" 
+                                    value="<?php echo $data_guru->nisn ?>"> 
+                            </div> 
+                            <div class="mb-3 col-6"> 
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="gender"> 
+                                    Gender 
+                                </label> 
+                                <select name="gender" id="gender" 
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                                    <option selected value="<?php echo $data_guru->gender ?>"> 
+                                        <?php echo $data_guru->gender ?></option> 
+                                    <option value="Laki-laki">Laki-laki</option> 
+                                    <option value="Perempuan">Perempuan</option> 
+                                </select> 
+                            </div> 
+                            <div class="mb-3 col-6"> 
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="mapel"> 
+                                    Mapel
+                                </label> 
+                                <select name="mapel" id="mapel" 
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                                    <option selected value="<?php echo $data_guru->id_mapel ?>">Pilih mapel</option> 
+                                    <?php echo tampil_full_mapel_byid($data_guru->id_mapel) ?> 
+                                    </option> 
+                                    <?php foreach($mapel as $row): ?> 
+                                    <option value="<?php echo $row->id ?>"> 
+                                        <?php echo $row->nama_mapel ?> 
+                                    </option> 
+                                    <?php endforeach ?> 
+                                </select> 
+                            </div> 
+                            <button type="submit" class="btn btn-primary" name="submit">Submit</button> 
+                        </form> 
+ 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+ 
+    <?php endforeach ?>
+    
 </body>
 
 </html>
