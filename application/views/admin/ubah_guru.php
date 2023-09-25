@@ -7,7 +7,6 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
 </head>
 
 <body>
@@ -34,13 +33,13 @@
                                     value="<?php echo $data_guru->nama_guru ?>"> 
                             </div> 
                             <div class="mb-3 col-6"> 
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="nisn"> 
-                                    NISN 
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="nik"> 
+                                    NIK 
                                 </label> 
                                 <input 
                                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                                    id="nisn" name="nisn" type="number" placeholder="Nisn" 
-                                    value="<?php echo $data_guru->nisn ?>"> 
+                                    id="nik" name="nik" type="number" placeholder="nik" 
+                                    value="<?php echo $data_guru->nik ?>"> 
                             </div> 
                             <div class="mb-3 col-6"> 
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="gender"> 
@@ -54,23 +53,23 @@
                                     <option value="Perempuan">Perempuan</option> 
                                 </select> 
                             </div> 
-                            <div class="mb-3 col-6"> 
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="mapel"> 
-                                    Mapel
-                                </label> 
-                                <select name="mapel" id="mapel" 
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
-                                    <option selected value="<?php echo $data_guru->id_mapel ?>">Pilih mapel</option> 
-                                    <?php echo tampil_full_mapel_byid($data_guru->id_mapel) ?> 
-                                    </option> 
-                                    <?php foreach($mapel as $row): ?> 
-                                    <option value="<?php echo $row->id ?>"> 
-                                        <?php echo $row->nama_mapel ?> 
-                                    </option> 
-                                    <?php endforeach ?> 
-                                </select> 
+                            <div class="mb-3 col-6">
+                            <label for="mapel" class="form-label">Mapel</label>
+                            <select name="id_mapel" class="form-select">
+                                    <option selected value="<?php echo $data_guru->id_mapel ?>"><?php echo tampil_mapel($data_guru->id_mapel) ?></option>
+                                    <?php echo tampil_mapel($data_guru->id_mapel) ?>
+                                    </option>
+                                    <?php foreach($mapel as $row): ?>
+                                    <option value="<?php echo $row->id ?>">
+                                        <?php echo $row->nama_mapel ?>
+                                    </option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                            <div>
+                                <input type="hidden" name="id" value="<?php echo $data_guru->id; ?>">
+                                <button type="submit" class="btn btn-primary"  class="btn">Ubah</button>
                             </div> 
-                            <button type="submit" class="btn btn-primary" name="submit">Submit</button> 
                         </form> 
  
                     </div> 

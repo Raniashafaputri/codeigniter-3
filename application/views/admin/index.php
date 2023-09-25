@@ -36,11 +36,12 @@
         <li>
           <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
         </li>
-        <li>
-          <a href="<?php echo base_url(
-              'auth/logout'
-          ); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</a>
+        <li> 
+          <a href="<?php echo base_url( 
+              'auth/logout' 
+          ); ?>" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Logout</a> 
         </li>
+
       </ul>
     </div>
   </div>
@@ -75,7 +76,7 @@
       </ul>
    </div>
 </aside>
-<h1 class="text-5xl font-bold" style="margin-left: 300px;">Dashboard<?php echo $this->session->userdata(
+<h1 class="text-5xl font-bold" style="margin-left: 300px;">Dashboard <?php echo $this->session->userdata(
     'username'
 ); ?></h1>
     <div class="flex space-x-4 p-2 my-5" style="margin-left: 300px;">

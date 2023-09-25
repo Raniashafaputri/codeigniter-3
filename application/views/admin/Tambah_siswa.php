@@ -134,7 +134,7 @@
 <div class="flex">
     <div class="navbar"> 
         <span class="openbtn" onclick="openNav()">&#9776;</span> 
-        <h3 class="text-center text-white">Ubah GURU</h3> 
+        <h3 class="text-center text-white">Tambah siswa</h3> 
         <div class="search-container"> 
             <input type="text" class="search-box" placeholder="Cari..."> 
             <button type="submit">Cari</button> 
@@ -188,14 +188,14 @@
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="kelas">
                                         Kelas
                                     </label>
-                                    <select name="kelas" id="kelas"
-                                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-                                        <option selected>Pilih Kelas</option>
-                                        <?php foreach($kelas as $row): ?>
-                                        <option value="<?php echo $row->id ?>">
-                                            <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?></option>
-                                        <?php endforeach ?>
-                                    </select>
+                                    <select name="id_kelas" class="form-select">
+                                <option selected>Pilih Kelas</option>
+                                <?php foreach($kelas as $row): ?>
+                                <option value="<?php echo $row->id ?>">
+                                    <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?>
+                                </option>
+                                <?php endforeach ?>
+                            </select>
                                 </div>
                                 <div class="mb-3 col-12"> 
                     <button type="submit" class="btn btn-primary"><h1 style="background-color:DodgerBlue;">Tambah</h1></button> 

@@ -24,7 +24,6 @@
         transition: margin-left 0.5s; 
     } 
  
- 
     body { 
         font-family: Arial, sans-serif; 
         margin: 0; 
@@ -181,7 +180,7 @@
                     <td><?php echo tampil_full_kelas_byid($row->id_kelas)?></td>
                     <td>
                         <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
-                        <a href="<?php echo base_url('admin/UPDATE_siswa'); ?>" class="btn btn-warning">Update</a>
+                        <a href="<?php echo base_url('admin/ubah_siswa/'). $row->id_siswa; ?>" class="btn btn-warning">Update</a>
                     </td>
                 </tr>
                 <?php endforeach ?>
@@ -201,7 +200,6 @@
         document.getElementById("mySidenav").style.width = "250px"; 
         document.getElementsByClassName("content")[0].style.marginLeft = "250px"; 
     } 
- 
     function closeNav() { 
         document.getElementById("mySidenav").style.width = "0"; 
         document.getElementsByClassName("content")[0].style.marginLeft = "0"; 

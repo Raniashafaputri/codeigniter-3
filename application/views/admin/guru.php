@@ -28,7 +28,7 @@
                                 Nama Guru
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                NISN
+                                NIK
                             </th>
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
                                 Gender
@@ -50,9 +50,9 @@
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700">
                                 <?php echo $row->nama_guru ?>
                             </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nisn ?></td>
+                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->id_mapel ?></td>
+                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo tampil_mapel($row->id_mapel) ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-center">
                                 <a href="<?php echo base_url('admin/ubah_guru/').$row->id?>" class="inline-block rounded bg-sky-600 px-4 py-2 text-xs font-medium text-white hover:bg-sky-700">
                                     Ubah
