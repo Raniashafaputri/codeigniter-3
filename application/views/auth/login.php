@@ -24,7 +24,7 @@
     <h2 class="text-center pt-3 text-primary">LOGIN </h2> 
 </div> 
    
-<form action="Auth/aksi_login" method="post" class="space-y-12"> 
+<form action="<?php echo base_url(); ?>Auth/aksi_login" method="post" class="space-y-12"> 
     <div class="card-body"> 
     <div class="mb-3"> 
     <label for="exampleInputEmail1" class="form-label">Email </label> 

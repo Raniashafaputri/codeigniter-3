@@ -134,7 +134,7 @@
     <div class="flex">
     <div class="navbar"> 
         <span class="openbtn" onclick="openNav()">&#9776;</span> 
-        <h3 class="text-center text-white">Data Siswa</h3> 
+        <h3 class="text-center text-white">Tambah Siswa</h3> 
         <div class="search-container"> 
             <input type="text" class="search-box" placeholder="Cari..."> 
             <button type="submit">Cari</button> 
@@ -196,8 +196,13 @@
                                         <?php endforeach ?>
                                     </select>
                                 </div>
+                                <div class="mb-4">
+                                    <label for="nama" class="form-label">foto</label>
+                                    <input type="file" class="form-control" name="foto">
+                                </div>
                                 <div class="mb-3 col-12"> 
-                    <button type="submit" class="btn btn-primary">Tambah</button> 
+                    <button type="submit" class="btn btn-primary"><h1 style="background-color:DodgerBlue;">Tambah</h1></button> 
+
                 </div> 
                 </div>
         </form> 

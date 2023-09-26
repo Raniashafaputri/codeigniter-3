@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Bootstrap CSS -->
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style> 
     .card { 
         background-color: #20B2AA; 
@@ -130,85 +134,71 @@
 
 </head>
 
-<body>
-    <div class="flex">
-    <div class="navbar"> 
-        <span class="openbtn" onclick="openNav()">&#9776;</span> 
-        <h3 class="text-center text-white">Data Siswa</h3> 
-        <div class="search-container"> 
-            <input type="text" class="search-box" placeholder="Cari..."> 
-            <button type="submit">Cari</button> 
-        </div> 
-    </div> 
- 
-    <!-- Side Navbar (Samping) --> 
-    <div class="sidenav" id="mySidenav"> 
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; tutup</a> 
-        <a href="<?php echo base_url('admin') ?>">Beranda</a> 
-        <a href="<?php echo base_url('admin/siswa') ?>">Siswa</a> 
-        
-    </div>
-
-<div class="content">
-        <div class="container mt-12">
-            <div class="overflow-x-auto">
-                <table class="divide-y-2 divide-gray-200 bg-white text-sm w-full px-2">
-                    <thead>
-                        <tr>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                No
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Nama Siswa
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                NISN
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Gender
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
-                                Kelas
-                            </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Aksi
-                            </th>
-                            <th class="px-4 py-2"></th>
-                        </tr>
-                    </thead>
-
-                    <tbody class="divide-y divide-gray-200">
-                        <?php $no=0; foreach($siswa as $row): $no++ ?>
-                        <tr>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $no ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                <?php echo $row->nama_siswa ?>
-                            </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nisn ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700">
-                                <?php echo tampil_full_kelas_byid($row->id_kelas) ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-center">
-                                <a href="#"
-                                    class="inline-block rounded bg-sky-600 px-4 py-2 text-xs font-medium text-white hover:bg-sky-700">
-                                    Ubah
-                                </a>
-                                <button onclick="hapus(<?php echo $row->id_siswa ?>)"
-                                    class="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">
-                                    Hapus
-                                </button>
-                            </td>
-                        </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
-                <button class="btn btn-sm btn-warning"><a href="Tambah_siswa" class="btn text-primary">Tambah</a> 
-            </button>
-
-            </div>
+<body class="min-vh-100 d-flex align-items-center bg-dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('admin') ?>">Beranda</a> 
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/siswa') ?>">Siswa</a> 
+            </li>
+           
+        </ul>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
         </div>
     </div>
-    </div>
+    </nav>
+        <div class="container">
+            <a href="<?php echo base_url('admin/tambah_siswa'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
+            <table class="table table-dark table-hover">
+                <tr>
+                    <td>No</td>
+                    <td>foto</td>
+                    <td>Siswa</td>
+                    <td>NISN</td>
+                    <td>Gender</td>
+                    <td>Kelas</td>
+                    <td>Aksi</td>
+                </tr>
+                <?php $no=0; foreach($siswa as $row): 
+                    $no++ ?>
+                    <tr>
+                    <td><?php echo $no ?>
+                    </td>
+                    <td class="border border-black"><img src="<?php echo base_url(
+                                    'images/siswa/' . $row->foto
+                                ); ?>" width="50" alt=""></td>
+
+                    <td>
+                        <?php echo $row->nama_siswa ?>
+                    </td>
+                    <td>
+                        <?php echo $row->nisn ?>
+                    </td>
+                    <td>
+                        <?php echo $row->gender ?>
+                    </td>
+                    <td>
+                        <?php echo tampil_full_kelas_byid($row->id_kelas)?></td>
+                    <td>
+                        <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
+                        <a href="<?php echo base_url('admin/UPDATE_siswa'); ?>" class="btn btn-warning">Update</a>
+                    </td>
+                </tr>
+                <?php endforeach ?>
+            </table>
+        </div>
+
     <script>
     function hapus(id) {
         var yes = confirm('Yakin Di Hapus?');
