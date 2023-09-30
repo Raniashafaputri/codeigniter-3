@@ -143,15 +143,11 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin') ?>">Beranda</a> 
+                <a class="nav-link" href="<?php echo base_url('pembayaran') ?>">Beranda</a> 
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/siswa') ?>">Siswa</a> 
+            <a class="nav-link" href="<?php echo base_url('keuangan/pembayaran') ?>">pembayaran</a> 
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/guru') ?>">Guru</a> 
-            </li>
-           
         </ul>
         <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -161,53 +157,48 @@
     </div>
     </nav>
         <div class="container">
-            <a href="<?php echo base_url('admin/tambah_siswa'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
+            <a href="<?php echo base_url('Keuangan/tambah_pembayaran'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
             <table class="table table-dark table-hover">
                 <tr>
                     <td>No</td>
-                    <td>foto</td>
-                    <td>Siswa</td>
-                    <td>NISN</td>
-                    <td>Gender</td>
-                    <td>Kelas</td>
+                    <td>Nama</td>
+                    <td>jenis pembayaran</td>
+                    <td>total pembayaran</td>
                     <td>Aksi</td>
                 </tr>
-                <?php $no=0; foreach($siswa as $row): 
+                <?php $no=0; foreach($pembayaran as $row): 
                     $no++ ?>
-                    <tr>
-                    <td><?php echo $no ?>
-                    </td>
-                    <td class="border border-black"><img src="<?php echo base_url(
-                                    'images/siswa/' . $row->foto
-                                ); ?>" width="50" alt=""></td>
+                <tr>    
                     <td>
-                        <?php echo $row->nama_siswa ?>
+                    <?php echo $no?>
                     </td>
                     <td>
-                        <?php echo $row->nisn ?>
+                        <?php echo tampil_nama_siswa($row->id_siswa)?>
                     </td>
                     <td>
-                        <?php echo $row->gender ?>
+                        <?php echo $row->jenis_pembayaran?>
                     </td>
                     <td>
-                        <?php echo tampil_full_kelas_byid($row->id_kelas)?></td>
+                        <?php echo convRupiah($row->total_pembayaran) ?>
+                    </td>
                     <td>
-                        <button onclick="hapus(<?php echo $row->id_siswa?>)" class="btn btn-danger">Hapus</button>
-                        <a href="<?php echo base_url('admin/UPDATE_siswa'); ?>" class="btn btn-warning">Update</a>
+                    <button onclick="hapus_data(<?php echo $row->id?>)" class="btn-danger">Hapus</button>
+                        <a href="<?php echo base_url('keuangan/update_pembayaran/'). $row->id; ?>" class="btn btn-warning">Update</a>
                     </td>
                 </tr>
                 <?php endforeach ?>
             </table>
         </div>
 
-    <script>
-    function hapus(id) {
+        <script>
+    function hapus_data(id) {
         var yes = confirm('Yakin Di Hapus?');
         if (yes == true) {
-            window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
+            window.location.href = "<?php echo base_url('Keuangan/hapus_data/')?>" + id;
         }
+        return false; // tambahkan return false agar tautan tidak mengikuti href
     }
-    </script>
+</script>
      <script> 
     function openNav() { 
         document.getElementById("mySidenav").style.width = "250px"; 
