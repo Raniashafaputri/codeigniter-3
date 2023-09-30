@@ -130,10 +130,10 @@
 
 </head>
 <body>
-<div class="card w-50 m-auto p-3"> 
-<div class="navbar"> 
+<div class="flex">
+    <div class="navbar"> 
         <span class="openbtn" onclick="openNav()">&#9776;</span> 
-        <h3 class="text-center text-white">Data Siswa</h3> 
+        <h3 class="text-center text-white">Ubah siswa</h3>
         <div class="search-container"> 
             <input type="text" class="search-box" placeholder="Cari..."> 
             <button type="submit">Cari</button> 
@@ -144,14 +144,14 @@
     <div class="sidenav" id="mySidenav"> 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; tutup</a> 
         <a href="<?php echo base_url('admin') ?>">Beranda</a> 
-        <a href="<?php echo base_url('admin/siswa') ?>">Siswa</a>  
-    </div> 
+        <a href="<?php echo base_url('admin/siswa') ?>">siswa</a> 
+        <a href="<?php echo base_url('admin/guru') ?>">guru</a> 
+    </div>
  
     <div class="content"> 
         <div class="d-flex"> 
  
             <div class="container"> 
- 
                 <div class="min-vh-100"> 
                     <div class='card w-75 m-auto p-3'> 
                         <h3 class="text-center ">Ubah Data Siswa</h3> 

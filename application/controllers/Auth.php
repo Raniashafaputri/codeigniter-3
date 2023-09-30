@@ -48,5 +48,4 @@ class Auth extends CI_Controller {
   $this->session->sess_destroy(); // Menggunakan sess_destroy() untuk mengakhiri sesi
   redirect(base_url('auth'));
  }
- 
 }

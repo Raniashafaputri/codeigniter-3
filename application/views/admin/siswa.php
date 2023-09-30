@@ -24,7 +24,6 @@
         transition: margin-left 0.5s; 
     } 
  
- 
     body { 
         font-family: Arial, sans-serif; 
         margin: 0; 
@@ -149,6 +148,9 @@
             <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('admin/siswa') ?>">Siswa</a> 
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/guru') ?>">Guru</a> 
+            </li>
            
         </ul>
         <form class="d-flex" role="search">
@@ -212,7 +214,6 @@
         document.getElementById("mySidenav").style.width = "250px"; 
         document.getElementsByClassName("content")[0].style.marginLeft = "250px"; 
     } 
- 
     function closeNav() { 
         document.getElementById("mySidenav").style.width = "0"; 
         document.getElementsByClassName("content")[0].style.marginLeft = "0"; 
