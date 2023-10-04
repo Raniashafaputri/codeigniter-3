@@ -162,6 +162,7 @@
     </nav>
         <div class="container">
             <a href="<?php echo base_url('admin/tambah_siswa'); ?>" class="btn btn-outline-success mb-2">Tambah</a>
+            <a href="<?php echo base_url('admin/export'); ?>" class="btn btn-outline-success mb-2">Export</a>
             <table class="table table-dark table-hover">
                 <tr>
                     <td>No</td>
@@ -198,6 +199,12 @@
                 </tr>
                 <?php endforeach ?>
             </table>
+            <form class="mt-5" method="post" enctype="multipart/form-data"
+                        action="<?= base_url('admin/import') ?>">
+                        <input type="file" name="file" />
+                        <input type="submit" name="import"
+                      class=inline-block runded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-r
+                      value="import" \>
         </div>
 
     <script>
