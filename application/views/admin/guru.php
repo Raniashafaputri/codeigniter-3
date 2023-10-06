@@ -36,9 +36,6 @@
                             <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900 text-left">
                                 mapel
                             </th>
-                            <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                Aksi
-                            </th>
                             <th class="px-4 py-2"></th>
                         </tr>
                     </thead>
@@ -52,20 +49,7 @@
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->nik ?></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo $row->gender ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo tampil_mapel($row->id_mapel) ?></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-center">
-                                <a href="<?php echo base_url('admin/ubah_guru/').$row->id?>" class="inline-block rounded bg-sky-600 px-4 py-2 text-xs font-medium text-white hover:bg-sky-700">
-                                    Ubah
-                                </a>
-                                <button onclick="hapus(<?php echo $row->id ?>)"
-                                    class="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700">
-                                    Hapus
-                                </button>
-                                <a href="<?php echo base_url('admin/tambah_guru'); ?>" type="submit" 
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
-                                    Tambah
-                                </button>
-                            </td>
+                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?php echo tampil_full_mapel_byid($row->id_mapel) ?></td>
                         </tr>
                         <?php endforeach ?>
                     </tbody>

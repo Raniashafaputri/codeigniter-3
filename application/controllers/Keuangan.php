@@ -212,6 +212,19 @@ class Keuangan extends CI_Controller {
         $this->m_model->delete('pembayaran', 'id', $id);
         redirect(base_url('keuangan/pembayaran'));
     }
-    
+  
+    public function export_pembayaran()
+    {
+        $data['data_pembayaran'] = $this->m_model->get_data('pembayaran')->result();
+        $data['nama'] = 'pembayaran';
+        if ($this->uri->segment(3) == "pdf") {
+            $this->load->library('pdf');
+            $this->pdf->load->view('keuangan\exsport_data_pembayaran', $data);
+            $this->pdf->render();
+            $this->pdf->strem("data_pembayaran.pdf". array("Attachent" => false));
+        }else{ 
+            $this->load->view('keuangan\download_data_pembayaran', $data);
+        }
+    }
 }
 ?>
